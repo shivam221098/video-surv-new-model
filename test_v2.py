@@ -3,7 +3,7 @@ import numpy as np
 import tensorflow as tf
 
 model = tf.keras.models.load_model("saved_model_v2")
-caption = cv2.VideoCapture("test_video_v.mp4")
+caption = cv2.VideoCapture("test_video_v_nv.mp4")
 
 while caption.isOpened():
     ret, frame = caption.read()
