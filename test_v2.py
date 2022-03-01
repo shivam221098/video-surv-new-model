@@ -3,7 +3,7 @@ import numpy as np
 import tensorflow as tf
 
 model = tf.keras.models.load_model("saved_model_v3")
-caption = cv2.VideoCapture("test_video_v_nv.mp4")
+caption = cv2.VideoCapture("videos/NV_3.mp4")
 
 font = cv2.FONT_HERSHEY_SIMPLEX
 position = (50, 50)
