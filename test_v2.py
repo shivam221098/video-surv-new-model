@@ -2,8 +2,8 @@ import cv2
 import numpy as np
 import tensorflow as tf
 
-model = tf.keras.models.load_model("saved_model_v2")
-caption = cv2.VideoCapture("Airport_crowd.mp4")
+model = tf.keras.models.load_model("saved_model_v3")
+caption = cv2.VideoCapture("test_video_v_nv.mp4")
 
 font = cv2.FONT_HERSHEY_SIMPLEX
 position = (50, 50)
@@ -25,7 +25,6 @@ while caption.isOpened():
 
         frame = cv2.putText(frame, text, position, font, font_size, color, thickness, cv2.LINE_AA)
         cv2.imshow("Frame", frame)
-
     else:
         break
 
