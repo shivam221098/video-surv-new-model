@@ -3,7 +3,7 @@ import numpy as np
 import tensorflow as tf
 
 model = tf.keras.models.load_model("saved_model_v3")
-caption = cv2.VideoCapture("videos/NV_3.mp4")
+caption = cv2.VideoCapture(0)
 
 font = cv2.FONT_HERSHEY_SIMPLEX
 position = (50, 50)
@@ -16,11 +16,12 @@ while caption.isOpened():
         resized_frame = cv2.resize(frame, (64, 64))
         x = np.expand_dims(resized_frame, axis=0)
         preds = model.predict(x)
-        if preds > 0.5:
-            text = "Violence Detected"
+        perc = round(float(preds[0]) * 100, 2)
+        if preds > 0.6:
+            text = f"Violence Detected - {perc}%"
             color = (0, 0, 255)
         else:
-            text = "No Violence Detected"
+            text = f"No Violence Detected - {perc}%"
             color = (0, 255, 0)
 
         frame = cv2.putText(frame, text, position, font, font_size, color, thickness, cv2.LINE_AA)

@@ -39,3 +39,4 @@ video_frames = []
 # x = np.array(video)
 # x = np.expand_dims(x, axis=0)
 # print(model.predict(x))
+appropriate for a plain stack of layers where each layer has exactly one input tensor and one output tensor
