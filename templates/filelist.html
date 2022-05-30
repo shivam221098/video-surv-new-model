@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>File List</title>
+    <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css">
+    <!--added code-->
+    <style>
+        table, td, tr{
+            border: 1px dotted brown;
+        }
+        button{
+            align-content: center;
+        }
+     </style>
+</head>
+
+<body>
+<h1>List of all files</h1>
+<hr>
+    {% if filelist|length == 0 %}
+        <h2 style="color: red">
+            <center>
+                *-*- No files 😔 -*-*
+            </center>
+        </h2>
+    {% else %}
+        <table>
+            {% for file in filelist %}
+                    <form action="/delete/{{file}}" method="post">
+                        <tr>
+                            <td>
+                                <a href="download/{{file}}">
+                                {{file}}
+                                </a>
+                            </td>
+                            <td>
+                                <button type="submit" id="delete">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+                    </form>
+            {% endfor %}
+        </table>
+    {% endif %}
+<hr>
+<a href="/">Home</a>
+{% if deleted|length > 0 %}
+    <br><br><br>
+    <center>
+        <b>
+            Just deleted: {{ deleted }}
+        </b>
+    </center>
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Uploaded</title>
+    <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css">
+</head>
+<body>
+<h1>Uploaded Files</h1>
+<hr>
+<ol>
+    {% for file in filenames %}
+        <li>
+            <h5>
+                {{ file }}
+            </h5>
+        </li>
+    {% endfor %}
+</ol>
+<hr>
+<h2>
+    Total {{ length }} Files Uploaded.
+</h2>
+<hr>
+<a href="/">Home</a>
+</body>
+</html>
