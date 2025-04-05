@@ -14,7 +14,7 @@ import datetime
 import zipfile
 
 
-model = tf.keras.models.load_model("saved_model_v5")
+model = tf.keras.models.load_model("models/saved_model_v3")
 vgg_model = VGG16(include_top=True, weights="imagenet")
 transfer_layer = vgg_model.get_layer("fc2")
 image_model_transfer = Model(inputs=vgg_model.input, outputs=transfer_layer.output)

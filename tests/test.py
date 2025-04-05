@@ -3,7 +3,7 @@ import numpy as np
 import tensorflow as tf
 from frame_extraction import Frames
 
-model = tf.keras.models.load_model("saved_model_v1")
+model = tf.keras.models.load_model("../models/saved_model_v1")
 caption = cv2.VideoCapture("test_video.mp4")
 print(model.predict(Frames.select_fr(Frames.read_fr(["test_video_nv.mp4"]))))
 frame_rate = caption.get(5)
@@ -39,4 +39,4 @@ video_frames = []
 # x = np.array(video)
 # x = np.expand_dims(x, axis=0)
 # print(model.predict(x))
-appropriate for a plain stack of layers where each layer has exactly one input tensor and one output tensor
+# appropriate for a plain stack of layers where each layer has exactly one input tensor and one output tensor

@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import tensorflow as tf
 
-model = tf.keras.models.load_model("saved_model_v2")
+model = tf.keras.models.load_model("../models/saved_model_v3")
 caption = cv2.VideoCapture(1)
 
 font = cv2.FONT_HERSHEY_SIMPLEX
