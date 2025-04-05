@@ -132,6 +132,8 @@ def detect(filename):
             zip_obj.write(file)
             os.remove(file)
 
+    os.remove(filename)
+
     return f"processed_files/{new_file_name}.zip"
 
 
